@@ -29,5 +29,8 @@ jobs:
     - name: Start FE
       run: npm run start-fe &
 
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+
     - name: Run tests
       run: npm test
