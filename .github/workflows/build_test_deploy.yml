@@ -23,6 +23,9 @@ jobs:
     - name: Install npm modules
       run: npm install
 
+    - name: Manualy change the config file
+      run: echo "export const settings = { host:'http://localhost:3030' };" > src/config.js
+
     - name: Start BE
       run: npm run start-be &
       
