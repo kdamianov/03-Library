@@ -1,7 +1,7 @@
 import * as api from './api.js';
 
-const host = 'https://libraryapp-be-9keg.onrender.com/'
-api.settings.host = 'https://libraryapp-be-9keg.onrender.com/';
+const host = 'https://libraryapp-be-9keg.onrender.com'
+api.settings.host = 'https://libraryapp-be-9keg.onrender.com';
 
 export const login = api.login;
 export const register = api.register;
