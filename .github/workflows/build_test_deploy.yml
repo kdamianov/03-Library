@@ -13,7 +13,7 @@ jobs:
     
     steps:
     - name: Repo checkout
-      uses: actions/checkout@v6
+      uses: actions/checkout@v4
       
     - name: Use Node.js 22
       uses: actions/setup-node@v6
@@ -23,6 +23,9 @@ jobs:
     - name: Install npm modules
       run: npm install
     
+    - name: Manualy change the config file
+      run: echo "export const settings = { host:'http://localhost:3030' };" > src/config.js
+
     - name: Start BE
       run: npm run start-be &
       
@@ -30,7 +33,7 @@ jobs:
       run: npm run start-fe &
 
     - name: Install Playwright browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install
 
     - name: Run tests
       run: npm test
