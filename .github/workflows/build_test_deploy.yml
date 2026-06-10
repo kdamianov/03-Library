@@ -1,0 +1,30 @@
+name: Build, test and deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Repo checkout
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js 24
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24
+
+    - name: Install npm modules
+      run: npm install
+    
+    - name: Start BE
+      run: npm run start-be
+      
+    - name: Start FE
+      run: npm run start-fe
