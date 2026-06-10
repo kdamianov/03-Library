@@ -15,10 +15,10 @@ jobs:
     - name: Repo checkout
       uses: actions/checkout@v6
       
-    - name: Use Node.js 24
+    - name: Use Node.js 22
       uses: actions/setup-node@v6
       with:
-        node-version: 24
+        node-version: 22
 
     - name: Install npm modules
       run: npm install
